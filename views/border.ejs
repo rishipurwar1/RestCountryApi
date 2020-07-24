@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<a href="/" class="back"><button><i class="fas fa-arrow-left"></i>Back</button></a>
+<main class="selected-country">
+    <div class="image">
+        <img src="<%=data.flag%>" alt="">
+    </div>
+    <div class="about-country">
+        <div class="details">
+            <div class="info-one">
+                <h1><%=data.name%></h1>
+                <p>Native Name: <span><%=data.nativeName%></span></p>
+                <p>Population: <span><%=data.population%></span></p>
+                <p>Region: <span><%=data.region%></p>
+                <p>Sub Region: <span><%=data.subregion%></p>
+                <p>Capital: <span><%=data.capital%></p>
+            </div>
+            <div class="info-two">
+                <p>Top Level Domain: <span><%=data.topLevelDomain[0]%></span></p>
+                <p>Currencies: <span><%=data.currencies[0].name%></span></p>
+                <p>Languages: 
+                    <%data.languages.forEach(language => {%>
+                        <span><%=language.name%></span>
+                    <%});%>
+                </p>
+            </div>
+        </div>
+        <div class="border-countries">
+            <p>Border Countries:
+                <%data.borders.forEach(border => {%>
+                    <a href="/country/border/<%=border%>"><button><%=border%></button></a>
+                <%}) %>
+            </p>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer') %>

@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+    --lightModeElements: hsl(0, 0%, 100%);
+    --lightModeText: hsl(200, 15%, 8%);
+    --lightModeInput: hsl(0, 0%, 52%);
+    --lightModeBackground: hsl(0, 0%, 98%);
+}
+
+.dark-mode {
+    --lightModeText: hsl(0, 0%, 100%);
+    --lightModeElements: hsl(209, 23%, 22%);
+    --lightModeBackground: hsl(207, 26%, 17%);
+    --lightModeInput: hsl(0, 0%, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--lightModeBackground);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 80px;
+    background-color: var(--lightModeElements);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: var(--lightModeText);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.navbar p {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--lightModeText);
+}
+
+.far {
+    transform: rotate(-25deg);
+    padding-right: 10px;
+    color: var(--lightModeText);
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 46px 80px;
+}
+
+.input {
+    position: relative;
+}
+
+.fas {
+    position: absolute;
+    top: 19px;
+    left: 20px;
+    color: var(--lightModeInput);
+}
+
+.input-section input {
+    border: none;
+    padding: 20px 140px 20px 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: var(--lightModeElements);
+}
+
+.input-section input:focus {
+    outline: none;
+}
+
+.input-section input::placeholder {
+    color: var(--lightModeInput);
+    font-size: 14px;
+}
+
+select {
+    width: 180px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    color: var(--lightModeText);
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    background-color: var(--lightModeElements);
+}
+
+select option {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--lightModeText);
+    padding: 50px 0;
+}
+
+select:focus {
+    outline: none;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 45px;
+    padding: 0 80px;
+    width: 100%;
+}
+
+.country {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: var(--lightModeElements);
+}
+
+.country img {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about {
+    padding: 8px 16px;
+    padding-bottom: 16px;
+}
+
+.about h2 {
+    padding: 10px 0;
+    color: var(--lightModeText);
+}
+
+.about p {
+    font-weight: 600;
+    color: var(--lightModeText);
+}
+
+.about p span {
+    font-weight: 400;
+}
+
+/* Show Route */
+.selected-country {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+    padding: 80px 80px;
+}
+
+.image img {
+    max-width: 100%;
+}
+
+.about-country {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    grid-gap: 80px;
+}
+
+.info-one h1 {
+    color: var(--lightModeText);
+    padding-bottom: 20px;
+}
+
+.info-one p {
+    color: var(--lightModeText);
+    padding: 5px 0;
+    font-weight: 600;
+}
+
+.info-one span {
+    font-weight: 400;
+}
+
+.info-two span {
+    font-weight: 400;
+}
+
+.info-two p {
+    color: var(--lightModeText);
+    padding: 5px 0;
+    font-weight: 600;
+}
+
+.border-countries {
+    margin-top: 30px;
+}
+
+.border-countries p {
+    color: var(--lightModeText);
+    font-weight: 600;
+}
+
+.border-countries p a {
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--lightModeText);
+}
+
+.border-countries p a button {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 4px 15px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background: var(--lightModeElements);
+    color: var(--lightModeText);
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    margin: 8px;
+}
+
+.border-countries p a button:focus {
+    outline: none;
+}
+
+.back {
+    position: absolute;
+    top: 100px;
+    left: 80px;
+    background-color: var(--lightModeElements);
+    border-radius: 5px;
+}
+
+.back button {
+    position: relative;
+    cursor: pointer;
+    color: var(--lightModeText);
+    padding: 10px 30px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.back button .fas {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    color: var(--lightModeText);
+}
+
+.back button:focus {
+    outline: none;
+}
+
+@media (max-width: 1100px) {
+    .main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .selected-country {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 710px) {
+    .main {
+        padding: 0 55px;
+    }
+    .navbar {
+        padding: 24px 55px;
+    }
+    .input-section {
+        flex-direction: column;
+        padding: 46px 55px;
+    }
+
+    .input-section input {
+        max-width: 100%;
+    }
+    select {
+        height: 55px;
+        margin-top: 25px;
+    }
+
+    .selected-country {
+        padding: 80px 55px;
+    }
+
+    .back {
+        left: 55px;
+    }
+}
+
+@media (max-width: 660px) {
+    .main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 460px) {
+    .main {
+        padding: 0 15px;
+    }
+    .navbar {
+        padding: 24px 15px;
+    }
+    .input-section {
+        padding: 46px 15px;
+    }
+
+    .selected-country {
+        padding: 80px 15px;
+    }
+
+    .back {
+        left: 15px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .back {
+        left: 20px;
+    }
+
+    .selected-country {
+        grid-template-columns: repeat(1 ,1fr);
+        grid-gap: 40px;
+        padding: 80px 20px;
+    }
+
+    .details {
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 30px;
+    }
+}

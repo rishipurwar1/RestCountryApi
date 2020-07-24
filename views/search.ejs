@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<section class="input-section">
+    <form class="input" action="/search" method="GET">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search for a country..." name="search">
+    </form>
+    <select class="custom-select" name="Filter by region" onChange="window.location.href=this.value">
+        <option value="" selected disabled hidden>Filter By Region</option>
+        <option value="/region/africa">Africa</option>
+        <option value="/region/americas">America</option>
+        <option value="/region/asia">Asia</option>
+        <option value="/region/europe">Europe</option>
+        <option value="/region/oceania">Oceania</option>
+    </select>
+</section>
+<main class="main">
+    <%data.forEach(country => {%>
+        <a class="country" href="/country/<%=country.name%>">
+            <img src="<%=country.flag%>" alt="">
+            <div class="about">
+                <h2><%=country.name%></h2>
+                <p>Population: <span><%=country.population%></span> </p>
+                <p>Region: <span><%=country.region%></span></p>
+                <p>Capital: <span><%=country.capital%></span></p>
+            </div>
+        </a>
+    <%});%>
+</main>
+<%- include('partials/footer') %>
