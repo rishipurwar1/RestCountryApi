@@ -351,4 +351,8 @@ select:focus {
         grid-template-columns: repeat(1,1fr);
         grid-gap: 30px;
     }
+
+    .far {
+        padding-right: 0;
+    }
 }
