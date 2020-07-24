@@ -75,6 +75,7 @@ body {
     padding: 20px 140px 20px 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+    color: var(--lightModeText);
     background-color: var(--lightModeElements);
 }
 
