@@ -6,12 +6,13 @@ app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"));
 
 app.get('/', (req, res) => {
-    var url = 'https://restcountries.eu/rest/v2/all';
+    var url = 'https://restcountries.com/v2/all';
     // Make a request for a user with a given ID
     axios.get(url)
     .then(function (response) {
     // handle success
     const data = response.data;
+    console.log(data)
     res.render('index', {data:data})
     })
     .catch(function (error) {
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
 app.get("/search", (req, res) => {
     const query = req.query.search;
     var url = 
-    `https://restcountries.eu/rest/v2/name/${query}`;
+    `https://restcountries.com/v2/name/${query}`;
     // Make a request for a user with a given ID
     axios.get(url)
     .then(function (response) {
@@ -53,7 +54,7 @@ app.get("/country/:id", (req, res) => {
     .replace(/ö/g, 'o')
     .replace(/Ö/g, 'O');
     var url = 
-    `https://restcountries.eu/rest/v2/name/${name}?fullText=true`;
+    `https://restcountries.com/v2/name/${name}?fullText=true`;
     // Make a request for a user with a given ID
     axios.get(url)
     .then(function (response) {
@@ -73,7 +74,7 @@ app.get("/country/:id", (req, res) => {
 app.get("/country/border/:id", (req, res) => {
     const code = req.params.id;
     var url = 
-    `https://restcountries.eu/rest/v2/alpha/${code}`;
+    `https://restcountries.com/v2/alpha/${code}`;
     // Make a request for a user with a given ID
     axios.get(url)
     .then(function (response) {
@@ -94,7 +95,7 @@ app.get("/country/border/:id", (req, res) => {
 app.get("/region/:id", (req, res) => {
     const region = req.params.id;
     var url = 
-    `https://restcountries.eu/rest/v2/region/${region}`;
+    `https://restcountries.com/v2/continent/${region}`;
     // Make a request for a user with a given ID
     axios.get(url)
     .then(function (response) {

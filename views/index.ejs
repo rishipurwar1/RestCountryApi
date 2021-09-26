@@ -16,7 +16,7 @@
 <main class="main">
     <%data.forEach(country => {%>
         <a class="country" href="/country/<%=country.name%>">
-            <img src="<%=country.flag%>" alt="">
+            <img src="<%=country.flags[0]%>" alt="">
             <div class="about">
                 <h2><%=country.name%></h2>
                 <p>Population: <span><%=country.population%></span> </p>
